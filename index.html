@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>CycleTransGAN-EVC Demo Page</title>
+</head>
+<style type="text/css">
+  table {
+    width: 200%;
+    table-layout: fixed;
+  }
+
+  audio {
+    width: 90%;
+  }
+
+  thead>tr>th:first-child {
+    width: 96px;
+  }
+
+  @media (max-width: 767px) {
+    .big-screen {
+      display: none;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .small-screen {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <header class="header">
+    <div class="jumbotron bg-info text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-11">
+            <h1><a class="text-light">CycleTransGAN-EVC Demo Page</h1><br>
+             <font size=5><span style="color:#000000"> Authors: C.Fu, C.Liu, C.T.Ishi, H.Ishiguro </font><font size=5> <br> <br>Osaka University/RIKEN</font> <br><br></font size=3><span style="color:#000000"> <a href="https://github.com/CZ26/CycleTransGAN-EVC" class="text-secondary">Code</a><br><p> </font> </a>  
+            <p>
+              <div class="row">
+              </div>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row" id="result">
+        <div class="col-md-12">
+<!--                     <img src="./audio/training.png"  width="1180" height="180" / > <p> -->
+<!--                     <figcaption style="text-align:center;">Fig.1 The training phase of the proposed CycleGAN-based emotional VC framework, where WORLD acts as the vocoder. CWT is used to decompose F0 into 10 scales. Blue boxes represent the training stage of the network, while grey boxes represent the blocks which do not need the training stage.</figcaption> <br> -->
+<!--                     <p> -->
+<!--                     <img src="./audio/Conversion.png"  width="1200" height="200"  / > <p> -->
+<!--                     <figcaption style="text-align:center;">Fig.2 The run-time conversion phase of the proposed CycleGAN-based emotional VC framework. Pink boxes represent the network which are already trained.</figcaption>  -->
+                    
+                    
+                   
+                  <div class="big-screen">
+                    <br /><br />
+<!--                     Code <a href="https://github.com/CZ26/CycleTransGAN-EVC">here</a>.<br><p> -->
+                    <h4 style="text-align:center;"> <b>Baselines</b>:</h4>
+                    <h5 style="text-align:center;"> (1) ACVAE; (2) CycleGAN</h5>
+                    <h4 style="text-align:center;"> <b> Our models </b>:</h4>
+                    <h5 style="text-align:center;"> (1) CycleTransGAN; (2) CycleTransGAN-FD; (3) CycleTransGAN-CL; (4) CycleTransGAN-All </h5>
+<!--                     <h6><b>CycleGAN-Separate (Proposed)</b>: Separate training CycleGAN-based emotional VC framework with CWT-F0 transformation</h6> -->
+                    <br />
+                    <br />
+                     <br /><br />
+                    <!--  Naturalness Evaluation -->
+                    <table class="table">
+
+                      <tbody>
+                                
+                                
+                                <tr>
+                                    <th> </th>
+                                    <th>   Source</th>
+                                    <th>   ACVAE</th>
+                                    <th>   CycleGAN </th>
+                                    <th>   CycleTransGAN </th>
+                                    <th>   CycleTransGAN-FD </th>
+                                    <th>   CycleTransGAN-CL </th>
+                                    <th>   CycleTransGAN-All </th>
+<!--                                     <th>   Target </th> -->
+<!--                                     <th style="text-align:center;">   CycleGAN-Separate </th>
+                                    <th style="text-align:center;">   Target </th> -->
+                                  
+                                </tr>
+                                
+                                 <!-- single sentence -->
+                                <tr>
+                                  <th scope="row">  </th>
+                                <tr>
+                                  <th colspan=5 align="center">
+                                    Neu2Sad
+                                  </th>
+                                </tr>
+                                <!-- single sentence -->
+                                </tr>
+                                 <tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/vae/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleGAN/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN_FD/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN_CL/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/proposed/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <!-- single sentence -->
+                                 <tr>
+                                  <th scope="row">  </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/vae/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleGAN/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN_FD/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN_CL/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/proposed/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <!-- single sentence -->
+                                 <tr>
+                                 <th scope="row">  </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/vae/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleGAN/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN_FD/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/CycleTansGAN_CL/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/sad_gen/proposed/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                   
+                                  <!-- single sentence -->
+                                <tr>
+                                  <th colspan=5 align="center">
+                                    Neu2Hap
+                                  </th>
+                                </tr>
+                                 <tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/vae/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleGAN/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN_FD/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN_CL/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/proposed/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <!-- single sentence -->
+                                 <tr>
+                                  <th scope="row">  </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/vae/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleGAN/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN_FD/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN_CL/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/proposed/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <!-- single sentence -->
+                                 <tr>
+                                 <th scope="row">  </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/vae/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleGAN/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN_FD/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/CycleTransGAN_CL/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/hap_gen/proposed/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+
+                                <tr>
+                                  <th colspan=5 align="center">
+                                    Neu2Ang
+                                  </th>
+                                </tr>
+                                <!-- single sentence -->
+                                 </tr>
+                                 <tr>
+                                  <th scope="row">  </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/vae/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleGAN/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN_FD/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN_CL/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/proposed/neutral_0001.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <!-- single sentence -->
+                                 <tr>
+                                  <th scope="row">  </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/vae/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleGAN/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN_FD/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN_CL/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/proposed/neutral_0002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <!-- single sentence -->
+                                 <tr>
+                                 <th scope="row">  </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="./samples/nor_ref/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/vae/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleGAN/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN_FD/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/CycleTransGAN_CL/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./samples/ang_gen/proposed/neutral_0003.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                      </tbody>
+                    </table>
+
+                  </div>
+                 
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="ref">
+        <div class="col">
+          <!--<h2>References</h2>
+          
+         -->
+        </div>
+      </div>
+      <hr>
+      <!-- <div class="row" id="contact">
+          <div class="col">
+            <h2>Contact</h2>
+            <div></div>
+          </div>
+        </div> -->
+    </div>
+  </main>
+  <footer class="bg-secondary text-light mt-4 pt-3 pb-2 ">
+    <div class="container">
+      <p class="text-center">
+        
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

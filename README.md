@@ -1,1 +1,1 @@
-# DemoPage-CycleTransGAN-EmotionalSpeechConversion
+# DemoPage-CycleTransGAN-EVC
